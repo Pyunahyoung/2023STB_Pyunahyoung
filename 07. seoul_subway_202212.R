@@ -47,13 +47,14 @@ subway$total_passenger<-subway$on_board+subway$getting_off
 str(subway)
 
 #1.지하철역의하루평균승차/하차승객수
-subway%>%  summarise(on_m=mean(on_board), off_m=mean(getting_off))
+subway%>%  
+  summarise(on_m=mean(on_board),off_m=mean(getting_off))
 
 #2.승차승객이가장많았던역을찾아보기
 #2-1 solutions. 
 max(subway$on_board)
 subway%>% 
-  filter(on_board==승차승객의최대값을숫자로넣어주세요)%>%  
+  filter(on_board==94732)%>%  
   select(Date, Line, Station, on_board)
 
 #3.역별 하루평균 전체승객수 분석
